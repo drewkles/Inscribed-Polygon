@@ -1,0 +1,52 @@
+@import url("bootstrap.css");
+
+
+.my-header {
+	font-size: 16px;
+	text-align: center;
+	background: #000099;
+	border-bottom: 3px solid #5d6c90;
+}
+
+.container {
+	text-align: center;
+}
+
+#canvas {
+	position: inline;
+	padding: 10px 10px 10px 10px;
+	z-index: 9998;
+
+}
+
+.col-lg {
+	padding: 10px 10px 10px 10px;
+	margin: 10px 10px 10px 10px
+}
+.form-group {
+	padding: 10px 10px 10px 10px;
+} 
+.enter-button {
+	padding:10px 10px 10px 10px;
+	}
+.buttone {
+	position: inline;
+	text-align: center;
+	margin-right:5%; 
+	}
+.table {
+	width: auto !important;
+	position: block;
+	text-align: center;
+	margin-right:15%;
+	margin-left: 25%;
+
+}
+.footer{
+	bottom:0px;
+	right:47%;
+	text-align: center;
+	position: fixed;
+	display:inline;
+}
+

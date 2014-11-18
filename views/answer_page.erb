@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>Solution</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var context = canvas.getContext("2d");
+        var numberOfSides = '<%= @the_answer.num_sides %>'
+            size = 100,
+            Xcenter = 105,
+            Ycenter = 105; 
+
+        context.beginPath();
+        context.strokeStyle = '#CC0000';
+        context.lineWidth = 3;
+
+        // Draw Circle
+        var radius = 100;
+        context.arc(Xcenter, Ycenter, radius, 0, 2 * Math.PI, false);  
+        context.stroke();      
+
+        context.beginPath();
+        context.lineWidth = 2;
+        context.strokeStyle = '#000099';
+        // Positioning is cool
+        context.moveTo (Xcenter +  size * Math.cos(0), Ycenter +  size *  Math.sin(0));          
+        //Draw Polygon
+        for (var i = 1; i <= numberOfSides;i += 1) {
+            var movex = Xcenter + size * Math.cos(i * 2 * Math.PI / numberOfSides)
+            var movey = Ycenter + size * Math.sin(i * 2 * Math.PI / numberOfSides)
+            context.lineTo (movex, movey);
+        } 
+        context.stroke();
+
+        context.beginPath();
+        context.strokeStyle = '#002200';
+        context.lineWidth = 1;
+        // Draw Triangles
+       for(var i = 1; i <= numberOfSides; i += 1) {
+        context.moveTo(Xcenter, Ycenter)
+        context.lineTo(Xcenter + size * Math.cos(i * 2 * Math.PI / numberOfSides), Ycenter + size * Math.sin(i * 2 * Math.PI / numberOfSides))
+        }
+
+        context.stroke();
+      }
+    }
+  </script>
+ </head>
+ <body onload="draw();">
+
+   <nav class="navbar navbar-default" role="navigation"></nav>
+    <div class="container">
+      <canvas id="canvas" width="250" height="250"></canvas>
+         
+      <table class="table table-bordered table-hover" >
+          <tbody>
+            <tr>
+              <td style="width : 30%" >Area of polygon = </td>
+              <td><%= @the_answer.solved %></td>
+            </tr>
+            <tr>
+              <td style="width : 30%">Number of sides = </td>
+              <td><%= @the_answer.num_sides %></td>
+            </tr>ß
+            <tr>
+              <td style="width : 30%">Length of each side = </td>
+              <td><%= @the_answer.side_length %></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div class="buttone">
+        <a class="btn btn-default" href="/" role="button">Enter a new value</a>
+      </div>
+    </div>
+
+    <div class="footer">
+        <p class="text-muted"> Andrew Elkins 2014 </p>
+    </div>
+ </body>
+</html>
+
+
+     
+  
