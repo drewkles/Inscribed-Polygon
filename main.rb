@@ -43,9 +43,6 @@ post '/answer_page' do
 	erb :answer_page
 end
 
-get '/boostr-theme.css.map' do
-end
-
 # the_answer = IPcalculator.new(12)
 # puts(the_answer.side_length)
 
