@@ -1,3 +1,3 @@
 require './main'
 
-run sintra::Application
+run Sintra::Application
