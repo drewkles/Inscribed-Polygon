@@ -43,7 +43,4 @@ post '/answer_page' do
 	erb :answer_page
 end
 
-# the_answer = IPcalculator.new(12)
-# puts(the_answer.side_length)
-
 
